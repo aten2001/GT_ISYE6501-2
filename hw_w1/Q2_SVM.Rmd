@@ -41,13 +41,40 @@ sum(pred==data_mat[,11])/nrow(data_mat)
 ```
 ```{r}
 library(kknn)
-knn_model = train.kknn(R1 ~ .,data,kmax = 20,scale=TRUE )
+knn_model = train.kknn(R1 ~ .,data,kmax = 10,scale=TRUE )
 knn_pred = predict(knn_model,data[,-11])
 knn_pred[knn_pred>0.5] = 1
 knn_pred[knn_pred<=0.5] = 0
 sum(knn_pred==data[,11])/nrow(data)
 ```
 ```{r}
+# cross-validation
+library(caret)
+# split data
+smp_size <- floor(0.2 * nrow(data))
+set.seed(12345)
+test_ind = sample(seq_len(nrow(data)), size = smp_size)
+train_validation = data[-test_ind,]
+test = data[test_ind,]
+# list of indeces
+folds <- createFolds(train_validation[,'R1'], k = 10, list = TRUE, returnTrain = FALSE)
+acurracies = array(1:10)
+for (i in 1:10){
+  validation = train_validation[folds[[i]],]
+  train = train_validation[-folds[[i]],]
+  knn_model = train.kknn(R1 ~ .,train,kmax = 3,scale=TRUE )
+  knn_pred = predict(knn_model,validation[,-11])
+  knn_pred[knn_pred>0.5] = 1
+  knn_pred[knn_pred<=0.5] = 0
+  acurracies[i] = sum(knn_pred==validation[,11])/nrow(data)
+}
+print(sum(acurracies)/10)
 
+#train on the whole train-validation set
+knn_model = train.kknn(R1 ~ .,train_validation,kmax = 10,scale=TRUE )
+knn_pred = predict(knn_model,test[,-11])
+knn_pred[knn_pred>0.5] = 1
+knn_pred[knn_pred<=0.5] = 0
+acurracy_test = sum(knn_pred==test[,11])/nrow(data)
 ```
 
