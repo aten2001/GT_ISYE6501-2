@@ -19,9 +19,35 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 
 ```{r}
 data = read.table(file.choose(),header = TRUE,sep = '\t',dec = '.' )
+data_mat = data.matrix(data)
 
 ```
 ```{r}
-head(data)
+head(data_mat)
+```
+```{r}
+library(kernlab)
+svm_model = ksvm(data_mat[,1:10],data[,11],type = "C-svc",kernel = 'vanilladot',C=100,scaled=TRUE)
+```
+find ai-s
+```{r}
+a = colSums(svm_model@xmatrix[[1]]*svm_model@coef[[1]])
+a0 = svm_model@b
+```
+test prediction
+```{r}
+pred = predict(svm_model,data_mat[,1:10])
+sum(pred==data_mat[,11])/nrow(data_mat)
+```
+```{r}
+library(kknn)
+knn_model = train.kknn(R1 ~ .,data,kmax = 20,scale=TRUE )
+knn_pred = predict(knn_model,data[,-11])
+knn_pred[knn_pred>0.5] = 1
+knn_pred[knn_pred<=0.5] = 0
+sum(knn_pred==data[,11])/nrow(data)
+```
+```{r}
+
 ```
 

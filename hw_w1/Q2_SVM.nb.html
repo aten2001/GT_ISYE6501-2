@@ -190,26 +190,73 @@ $(document).ready(function () {
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA9IHJlYWQudGFibGUoZmlsZS5jaG9vc2UoKSxoZWFkZXIgPSBUUlVFLHNlcCA9ICdcXHQnLGRlYyA9ICcuJyApXG5gYGAifQ== -->
-<pre class="r"><code>data = read.table(file.choose(),header = TRUE,sep = '\t',dec = '.' )</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YSA9IHJlYWQudGFibGUoZmlsZS5jaG9vc2UoKSxoZWFkZXIgPSBUUlVFLHNlcCA9ICdcXHQnLGRlYyA9ICcuJyApXG5kYXRhX21hdCA9IGRhdGEubWF0cml4KGRhdGEpXG5gYGAifQ== -->
+<pre class="r"><code>data = read.table(file.choose(),header = TRUE,sep = '\t',dec = '.' )
+data_mat = data.matrix(data)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChkYXRhKVxuYGBgIn0= -->
-<pre class="r"><code>head(data)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChkYXRhX21hdClcbmBgYCJ9 -->
+<pre class="r"><code>head(data_mat)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTEsIm5yb3ciOjZ9LCJyZGYiOiJINHNJQUFBQUFBQUFCZ3R5aVREaWl1QmlZR0JnWW1CbUJaTE1RQ1lMRTVCZ1pHQmg0QVRSRlF3TXpNSkFCamNROHdJeEcxZ1NBUmlSTUI5STNzSHVTdFZEOTNVaURyNmhoL3BqTkw0NVdEU0FGVHBZUThWTnRGdmxkZ1MrY1hEZ3NpMVlmSjBMcGc5bW9JUGdkYkNFL1FNSTMvN0hZcERBRWdjeHFEa0NjTHZCK3V5L1FQVnhCTDRHR2h4ay93UEs1NFBxL3gyajhSWG9FZ2NXdUQ1a2YyRERNSGxrUHpKZ2tXZEVVc2VLcEI2Yitjam13T1JQQWJFMlVGZ0NTS2NBTVRDc0dUTlE3V2N5QUlhL0JaREJUTUI4Skl3U2dheDVpYm1weFVBR0tOaTRvWUpNam9ad2xoR2NaUXhuV2NCWmxsQVdzNk9oQVlKcGlHQWFJWmdtQ0tZcHpJQWdRelQzY0JibGwrdkIzQVR5Q0ZNRHhGTnM2QTVQemtrc2hqa2NKc2lWa2xpU3FKZFdCTlFQNVAxRDA4S2VYMUNTbVo4SDFNUWtESTBTWk0yTVJXZ0MvS1Y1SUplazZDWm5sT1psNjRLQ21Rc3RtbUZSREdOelE2eGsrZzgxaWhWcUZGdHFYbnBtWGlyTTdUbUpTYWs1VUE0ZjBNZGdEK3NWRkdYbWxjQjhBaFF0MWl2SkwwbUVxZU5LenMrQmlZRDl4dkFQQUdySUdLaWdBd0FBIn0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["A1"],"name":[1],"type":["int"],"align":["right"]},{"label":["A2"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["A3"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["A8"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["A9"],"name":[5],"type":["int"],"align":["right"]},{"label":["A10"],"name":[6],"type":["int"],"align":["right"]},{"label":["A11"],"name":[7],"type":["int"],"align":["right"]},{"label":["A12"],"name":[8],"type":["int"],"align":["right"]},{"label":["A14"],"name":[9],"type":["int"],"align":["right"]},{"label":["A15"],"name":[10],"type":["int"],"align":["right"]},{"label":["R1"],"name":[11],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"30.83","3":"0.000","4":"1.25","5":"1","6":"0","7":"1","8":"1","9":"202","10":"0","11":"1","_rn_":"1"},{"1":"0","2":"58.67","3":"4.460","4":"3.04","5":"1","6":"0","7":"6","8":"1","9":"43","10":"560","11":"1","_rn_":"2"},{"1":"0","2":"24.50","3":"0.500","4":"1.50","5":"1","6":"1","7":"0","8":"1","9":"280","10":"824","11":"1","_rn_":"3"},{"1":"1","2":"27.83","3":"1.540","4":"3.75","5":"1","6":"0","7":"5","8":"0","9":"100","10":"3","11":"1","_rn_":"4"},{"1":"1","2":"20.17","3":"5.625","4":"1.71","5":"1","6":"1","7":"0","8":"1","9":"120","10":"0","11":"1","_rn_":"5"},{"1":"1","2":"32.08","3":"4.000","4":"2.50","5":"1","6":"1","7":"0","8":"0","9":"360","10":"0","11":"1","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[11]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBBMSAgICBBMiAgICBBMyAgIEE4IEE5IEExMCBBMTEgQTEyIEExNCBBMTUgUjFcblsxLF0gIDEgMzAuODMgMC4wMDAgMS4yNSAgMSAgIDAgICAxICAgMSAyMDIgICAwICAxXG5bMixdICAwIDU4LjY3IDQuNDYwIDMuMDQgIDEgICAwICAgNiAgIDEgIDQzIDU2MCAgMVxuWzMsXSAgMCAyNC41MCAwLjUwMCAxLjUwICAxICAgMSAgIDAgICAxIDI4MCA4MjQgIDFcbls0LF0gIDEgMjcuODMgMS41NDAgMy43NSAgMSAgIDAgICA1ICAgMCAxMDAgICAzICAxXG5bNSxdICAxIDIwLjE3IDUuNjI1IDEuNzEgIDEgICAxICAgMCAgIDEgMTIwICAgMCAgMVxuWzYsXSAgMSAzMi4wOCA0LjAwMCAyLjUwICAxICAgMSAgIDAgICAwIDM2MCAgIDAgIDFcbiJ9 -->
+<pre><code>     A1    A2    A3   A8 A9 A10 A11 A12 A14 A15 R1
+[1,]  1 30.83 0.000 1.25  1   0   1   1 202   0  1
+[2,]  0 58.67 4.460 3.04  1   0   6   1  43 560  1
+[3,]  0 24.50 0.500 1.50  1   1   0   1 280 824  1
+[4,]  1 27.83 1.540 3.75  1   0   5   0 100   3  1
+[5,]  1 20.17 5.625 1.71  1   1   0   1 120   0  1
+[6,]  1 32.08 4.000 2.50  1   1   0   0 360   0  1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShrZXJubGFiKVxuc3ZtX21vZGVsID0ga3N2bShkYXRhX21hdFssMToxMF0sZGF0YVssMTFdLHR5cGUgPSBcIkMtc3ZjXCIsa2VybmVsID0gJ3ZhbmlsbGFkb3QnLEM9MTAwLHNjYWxlZD1UUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>library(kernlab)
+svm_model = ksvm(data_mat[,1:10],data[,11],type = &quot;C-svc&quot;,kernel = 'vanilladot',C=100,scaled=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFNldHRpbmcgZGVmYXVsdCBrZXJuZWwgcGFyYW1ldGVycyAgXG4ifQ== -->
+<pre><code> Setting default kernel parameters  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>find ai-s</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9IGNvbFN1bXMoc3ZtX21vZGVsQHhtYXRyaXhbWzFdXSpzdm1fbW9kZWxAY29lZltbMV1dKVxuYGBgIn0= -->
+<pre class="r"><code>a = colSums(svm_model@xmatrix[[1]]*svm_model@coef[[1]])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>test prediction</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJlZCA9IHByZWRpY3Qoc3ZtX21vZGVsLGRhdGFfbWF0WywxOjEwXSlcbnN1bShwcmVkPT1kYXRhX21hdFssMTFdKS9ucm93KGRhdGFfbWF0KVxuYGBgIn0= -->
+<pre class="r"><code>pred = predict(svm_model,data_mat[,1:10])
+sum(pred==data_mat[,11])/nrow(data_mat)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuODYzOTE0NFxuIn0= -->
+<pre><code>[1] 0.8639144</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShra25uKVxua25uX21vZGVsID0gdHJhaW4ua2tubihSMSB+IC4sZGF0YSxrbWF4ID0gMjAsc2NhbGU9VFJVRSApXG5rbm5fcHJlZCA9IHByZWRpY3Qoa25uX21vZGVsLGRhdGFbLC0xMV0pXG5rbm5fcHJlZFtrbm5fcHJlZD4wLjVdID0gMVxua25uX3ByZWRba25uX3ByZWQ8PTAuNV0gPSAwXG5zdW0oa25uX3ByZWQ9PWRhdGFbLDExXSkvbnJvdyhkYXRhKVxuYGBgIn0= -->
+<pre class="r"><code>library(kknn)
+knn_model = train.kknn(R1 ~ .,data,kmax = 20,scale=TRUE )
+knn_pred = predict(knn_model,data[,-11])
+knn_pred[knn_pred&gt;0.5] = 1
+knn_pred[knn_pred&lt;=0.5] = 0
+sum(knn_pred==data[,11])/nrow(data)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDAuOTA1MTk4OFxuIn0= -->
+<pre><code>[1] 0.9051988</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0KDQpgYGB7cn0NCmRhdGEgPSByZWFkLnRhYmxlKGZpbGUuY2hvb3NlKCksaGVhZGVyID0gVFJVRSxzZXAgPSAnXHQnLGRlYyA9ICcuJyApDQoNCmBgYA0KYGBge3J9DQpoZWFkKGRhdGEpDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpUaGlzIGlzIGFuIFtSIE1hcmtkb3duXShodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tKSBOb3RlYm9vay4gV2hlbiB5b3UgZXhlY3V0ZSBjb2RlIHdpdGhpbiB0aGUgbm90ZWJvb2ssIHRoZSByZXN1bHRzIGFwcGVhciBiZW5lYXRoIHRoZSBjb2RlLiANCg0KVHJ5IGV4ZWN1dGluZyB0aGlzIGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqUnVuKiBidXR0b24gd2l0aGluIHRoZSBjaHVuayBvciBieSBwbGFjaW5nIHlvdXIgY3Vyc29yIGluc2lkZSBpdCBhbmQgcHJlc3NpbmcgKkN0cmwrU2hpZnQrRW50ZXIqLiANCg0KYGBge3J9DQpwbG90KGNhcnMpDQpgYGANCg0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0KDQpgYGB7cn0NCmRhdGEgPSByZWFkLnRhYmxlKGZpbGUuY2hvb3NlKCksaGVhZGVyID0gVFJVRSxzZXAgPSAnXHQnLGRlYyA9ICcuJyApDQpkYXRhX21hdCA9IGRhdGEubWF0cml4KGRhdGEpDQoNCmBgYA0KYGBge3J9DQpoZWFkKGRhdGFfbWF0KQ0KYGBgDQpgYGB7cn0NCmxpYnJhcnkoa2VybmxhYikNCnN2bV9tb2RlbCA9IGtzdm0oZGF0YV9tYXRbLDE6MTBdLGRhdGFbLDExXSx0eXBlID0gIkMtc3ZjIixrZXJuZWwgPSAndmFuaWxsYWRvdCcsQz0xMDAsc2NhbGVkPVRSVUUpDQpgYGANCmZpbmQgYWktcw0KYGBge3J9DQphID0gY29sU3Vtcyhzdm1fbW9kZWxAeG1hdHJpeFtbMV1dKnN2bV9tb2RlbEBjb2VmW1sxXV0pDQphMCA9IHN2bV9tb2RlbEBiDQpgYGANCnRlc3QgcHJlZGljdGlvbg0KYGBge3J9DQpwcmVkID0gcHJlZGljdChzdm1fbW9kZWwsZGF0YV9tYXRbLDE6MTBdKQ0Kc3VtKHByZWQ9PWRhdGFfbWF0WywxMV0pL25yb3coZGF0YV9tYXQpDQpgYGANCmBgYHtyfQ0KbGlicmFyeShra25uKQ0Ka25uX21vZGVsID0gdHJhaW4ua2tubihSMSB+IC4sZGF0YSxrbWF4ID0gMjAsc2NhbGU9VFJVRSApDQprbm5fcHJlZCA9IHByZWRpY3Qoa25uX21vZGVsLGRhdGFbLC0xMV0pDQprbm5fcHJlZFtrbm5fcHJlZD4wLjVdID0gMQ0Ka25uX3ByZWRba25uX3ByZWQ8PTAuNV0gPSAwDQpzdW0oa25uX3ByZWQ9PWRhdGFbLDExXSkvbnJvdyhkYXRhKQ0KYGBgDQpgYGB7cn0NCg0KYGBgDQoNCg==</div>
 
 
 
