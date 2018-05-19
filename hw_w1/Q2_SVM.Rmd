@@ -66,7 +66,7 @@ for (i in 1:10){
   knn_pred = predict(knn_model,validation[,-11])
   knn_pred[knn_pred>0.5] = 1
   knn_pred[knn_pred<=0.5] = 0
-  acurracies[i] = sum(knn_pred==validation[,11])/nrow(data)
+  acurracies[i] = sum(knn_pred==validation[,11])/nrow(validation)
 }
 print(sum(acurracies)/10)
 
@@ -75,6 +75,6 @@ knn_model = train.kknn(R1 ~ .,train_validation,kmax = 10,scale=TRUE )
 knn_pred = predict(knn_model,test[,-11])
 knn_pred[knn_pred>0.5] = 1
 knn_pred[knn_pred<=0.5] = 0
-acurracy_test = sum(knn_pred==test[,11])/nrow(data)
+acurracy_test = sum(knn_pred==test[,11])/nrow(test)
 ```
 
