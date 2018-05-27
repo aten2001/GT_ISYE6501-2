@@ -22,11 +22,15 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 iris_data = read.table(file.choose(),sep = "",header = TRUE,row.names = 1)
 iris_mat = data.matrix(iris_data[,1:4])
 ```
-# kmean
+# kmean and elbow curve
 ```{r}
+loss = array(1:10)
+for (i in 1:10)
+{
+  km_fit = kmeans(iris_mat,i)
+  loss[i] = km_fit$totss
+}
 
-km_fit = kmeans(iris_mat,5)
-km_fit$cluster
 
 ```
 
