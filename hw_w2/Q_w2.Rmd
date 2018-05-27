@@ -37,9 +37,25 @@ print(km_best$cluster)
 ```
 calc accuracy
 ```{r}
+x = as.factor(iris_data[,5])
+#levels(x) = 1:length(levels(x))
+x = as.numeric(x)
+y = as.numeric((km_best$cluster))
 
+swap <- function(vec, from, to) {
+  tmp <- to[ match(vec, from) ]
+  tmp[is.na(tmp)] <- vec[is.na(tmp)]
+  return(tmp)
+}
+ z = swap(y,c(2,3),c(3,2))
+accuracy = length(x[x==z])/length(x)
 ```
 
 
 Q5.1
+load crime data.
+```{r}
+crime_data = read.table(file.choose(),sep = '\t',header = TRUE)
+```
+
 
